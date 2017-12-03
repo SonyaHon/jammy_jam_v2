@@ -269,6 +269,7 @@ class StateDeath:
 	
 	func attack_finished():
 		me.get_node("../../").reduceEnemies();
+		Utils.get_world_node("player").addScore();
 		me.queue_free();
 		pass
 	

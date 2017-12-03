@@ -1,0 +1,267 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://sprites/column.png" type="Texture" id=1]
+[ext_resource path="res://sprites/slow_padle.png" type="Texture" id=2]
+[ext_resource path="res://sprites/speed_padle.png" type="Texture" id=3]
+[ext_resource path="res://sprites/heal_preview.png" type="Texture" id=4]
+[ext_resource path="res://scripts/ui_start_btn.gd" type="Script" id=5]
+
+[node name="StartScreen" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="ColorFrame" type="ColorFrame" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1200.0
+margin/bottom = 600.0
+color = Color( 0.226562, 0.189392, 0.189392, 1 )
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 400.0
+margin/top = 20.0
+margin/right = 556.0
+margin/bottom = 34.0
+text = "Welcome to Jammy Jam!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label 2" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 31.0
+margin/top = 69.0
+margin/right = 336.0
+margin/bottom = 83.0
+text = "Use WASD, and mouse to control the character."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label3" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 31.0
+margin/top = 87.0
+margin/right = 745.0
+margin/bottom = 101.0
+text = "Your movement is controlled by your mass. The heavier you are, the harder it will be to controll your  character."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label 3" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 30.0
+margin/top = 107.0
+margin/right = 362.0
+margin/bottom = 138.0
+text = "Bullets deal no damage, but push you and enemies.
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label 4" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 30.0
+margin/top = 127.0
+margin/right = 400.0
+margin/bottom = 141.0
+text = "If you hit the wall you will die, so be carefull."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label 5" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 31.0
+margin/top = 147.0
+margin/right = 466.0
+margin/bottom = 161.0
+text = "Your enemies will die when colliding into each other or into a wall."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label6" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 88.0
+margin/top = 182.0
+margin/right = 766.0
+margin/bottom = 213.0
+text = "<---- These are bounce columns. If you collide with them, you will bounce away. Use it for your advantage.
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label7" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 32.0
+margin/top = 238.0
+margin/right = 710.0
+margin/bottom = 269.0
+text = "Healing stations will clear you  up and stop you in place. ----->
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label8" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 163.0
+margin/top = 304.0
+margin/right = 841.0
+margin/bottom = 335.0
+text = "<------- Speed puddles will boost you up.
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label9" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 52.0
+margin/top = 369.0
+margin/right = 730.0
+margin/bottom = 400.0
+text = "And slow puddles will slown you down (your CO) ----->
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label10" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 256.0
+margin/top = 513.0
+margin/right = 934.0
+margin/bottom = 544.0
+text = "Try to kill as many dirty slimes as you can. And remember WALLS ARE LAVA."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 34.0
+margin/top = 175.0
+margin/right = 74.0
+margin/bottom = 215.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+
+[node name="TextureFrame1" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 418.0
+margin/top = 343.0
+margin/right = 546.0
+margin/bottom = 407.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="TextureFrame2" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 23.0
+margin/top = 280.0
+margin/right = 151.0
+margin/bottom = 344.0
+texture = ExtResource( 3 )
+stretch_mode = 0
+
+[node name="TextureFrame3" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 440.0
+margin/top = 211.0
+margin/right = 504.0
+margin/bottom = 275.0
+texture = ExtResource( 4 )
+stretch_mode = 0
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 474.0
+margin/top = 549.0
+margin/right = 515.0
+margin/bottom = 569.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Start"
+flat = false
+script/script = ExtResource( 5 )
+
+

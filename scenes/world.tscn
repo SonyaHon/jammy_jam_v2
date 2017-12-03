@@ -54,12 +54,115 @@ editor/display_folded = true
 [node name="player" parent="." instance=ExtResource( 6 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 354.906, 433.419 )
+transform/pos = Vector2( 63.9896, 508.786 )
 transform/rot = 0.458661
 gravity_scale = 0.0
 player_initial_mass = 90.0
 
 [node name="camera" parent="." instance=ExtResource( 7 )]
+
+editor/display_folded = true
+
+[node name="GUI" type="CanvasLayer" parent="camera"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="mass" type="HSplitContainer" parent="camera/GUI"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 24.0
+margin/top = 7.0
+margin/right = 73.0
+margin/bottom = 47.0
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lbl" type="Label" parent="camera/GUI/mass"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 13.0
+margin/right = 37.0
+margin/bottom = 27.0
+text = "Mass:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="lbl_mass" type="Label" parent="camera/GUI/mass"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 49.0
+margin/top = 13.0
+margin/right = 65.0
+margin/bottom = 27.0
+text = "90"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="score" type="HSplitContainer" parent="camera/GUI"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 25.0
+margin/top = 25.0
+margin/right = 92.0
+margin/bottom = 65.0
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lbl" type="Label" parent="camera/GUI/score"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 13.0
+margin/right = 39.0
+margin/bottom = 27.0
+text = "Score:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="lbl_src" type="Label" parent="camera/GUI/score"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 51.0
+margin/top = 13.0
+margin/right = 67.0
+margin/bottom = 27.0
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
 [editable path="levels/level1"]

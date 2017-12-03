@@ -31,6 +31,11 @@ var slow_padle_coef = 1;
 var speed_padle_coef = 1;
 
 var canAttack = true;
+var score = 0;
+
+signal died
+
+var started = false;
 
 func _ready():
 	add_to_group(Utils.GR_PLAYER);
@@ -73,13 +78,28 @@ func _on_collide(target):
 		pass
 	elif target.is_in_group(Utils.GR_ENEMY_BULLET):
 		player_mass += 1;
+		if player_mass >= 100:
+			player_mass = 99.99
+			pass
 		current_acceleration += target.get_linear_velocity() * 0.03;
+		pass
+	elif target.is_in_group(Utils.GR_WALL):
+		print("OMG Collision!");
+		emit_signal("died");
 		pass
 	pass
 
 func _process(delta):
 	var nv = get_pos() - Utils.get_world_node("camera").get_global_mouse_pos();
 	pl_body.get_node("sprite").set_rot(atan2(nv.x, nv.y));
+	
+	Utils.get_world().get_node("camera").get_node("GUI").get_node("mass").get_node("lbl_mass").set_text(String(player_mass));
+	Utils.get_world().get_node("camera").get_node("GUI").get_node("score").get_node("lbl_src").set_text(String(score));
+	
+	pass
+
+func addScore():
+	score += 1;
 	pass
 
 func _fixed_process(delta):
@@ -98,45 +118,54 @@ func _fixed_process(delta):
 	elif String(current_state.get_type()) == String(STATE_IDLE) and (current_velocity.x != 0 or current_velocity.y != 0):
 		change_state(STATE_RUN);
 		pass
+	
+	if String(current_state.get_type()) == String(STATE_RUN) and player_mass > 90.0001:
+		player_mass -= 0.001
+		pass
+	
 	pl_body.set_linear_velocity(current_velocity)
 	pass
 
 func _input(evt):
-	
-	if evt.type == 1:
-		# W
-		if evt.scancode == 87 and evt.pressed == true:
-			current_acceleration.y = -player_speed;
+	if started:
+		if evt.type == 1:
+			# W
+			if evt.scancode == 87 and evt.pressed == true:
+				current_acceleration.y = -player_speed;
+				pass
+			elif evt.scancode == 87 and evt.pressed == false:
+				current_acceleration.y = 0;
+				pass
+			# D
+			if evt.scancode == 68 and evt.pressed == true:
+				current_acceleration.x = player_speed;
+				pass
+			elif evt.scancode == 68 and evt.pressed == false:
+				current_acceleration.x = 0;
+				pass
+			# S
+			if evt.scancode == 83 and evt.pressed == true:
+				current_acceleration.y = player_speed;
+				pass
+			elif evt.scancode == 83 and evt.pressed == false:
+				current_acceleration.y = 0;
+				pass
+			# A
+			if evt.scancode == 65 and evt.pressed == true:
+				current_acceleration.x = -player_speed;
+				pass
+			elif evt.scancode == 65 and evt.pressed == false:
+				current_acceleration.x = 0;
+				pass
 			pass
-		elif evt.scancode == 87 and evt.pressed == false:
-			current_acceleration.y = 0;
-			pass
-		# D
-		if evt.scancode == 68 and evt.pressed == true:
-			current_acceleration.x = player_speed;
-			pass
-		elif evt.scancode == 68 and evt.pressed == false:
-			current_acceleration.x = 0;
-			pass
-		# S
-		if evt.scancode == 83 and evt.pressed == true:
-			current_acceleration.y = player_speed;
-			pass
-		elif evt.scancode == 83 and evt.pressed == false:
-			current_acceleration.y = 0;
-			pass
-		# A
-		if evt.scancode == 65 and evt.pressed == true:
-			current_acceleration.x = -player_speed;
-			pass
-		elif evt.scancode == 65 and evt.pressed == false:
-			current_acceleration.x = 0;
-			pass
-		pass
-	elif evt.type == 3 and evt.button_index == 1 and evt.pressed == 1:
-		if String(current_state.get_type()) != String(STATE_ATTACK) and canAttack:
-			canAttack = false;
-			change_state(STATE_ATTACK);
+		elif evt.type == 3 and evt.button_index == 1 and evt.pressed == 1:
+			if String(current_state.get_type()) != String(STATE_ATTACK) and canAttack:
+				canAttack = false;
+				change_state(STATE_ATTACK);
+	pass
+
+func start():
+	started = true;
 	pass
 
 func fire():
