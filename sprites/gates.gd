@@ -8,7 +8,7 @@ signal passed;
 func _ready():
 	if !is_opened:
 		get_parent().get_parent().get_parent().connect("cleared", self, "_open", [], CONNECT_ONESHOT)
-		get_node("passed").connect("body_exit", self, "_close")
+		get_node("passed").connect("body_exit", self, "_close", [], CONNECT_ONESHOT)
 		pass
 	else:
 		anim.play("open");

@@ -269,9 +269,13 @@ transform/pos = Vector2( -79.2847, 48.2847 )
 
 [node name="exit" parent="." instance=ExtResource( 6 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 717.027, 47.6502 )
 transform/rot = 180.0
 is_opened = true
 
+[node name="passed" parent="exit"]
 
+transform/pos = Vector2( -34.7701, -1.32038 )
+
+
+[editable path="exit"]

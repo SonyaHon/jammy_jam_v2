@@ -16,7 +16,7 @@ func start():
 
 func _ready():
 	set_process(true);
-	
+	add_to_group(Utils.GR_WALL);
 	slime_num = slime_number;
 	current_timer = slime_spawn_delay;
 	
@@ -34,6 +34,7 @@ func _process(delta):
 				sl.set_pos(spawn_point);
 				slime_num -= 1;
 				get_node("../../enemies/").add_child(sl);
+				sl.start();
 				get_node("../../").addEnemies();
 				pass
 			else:

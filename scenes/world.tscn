@@ -31,10 +31,15 @@ transform/pos = Vector2( 170.257, 266.489 )
 [node name="slime_spawner" parent="levels/level1/spawners" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 218.153, 250.737 )
-slime_number = 1
+slime_number = 2
 slime_spawn_delay = 1
 
 [node name="level2" parent="levels" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+next_level = NodePath("../level3")
+
+[node name="connector" parent="levels/level2"]
 
 editor/display_folded = true
 
@@ -42,11 +47,16 @@ editor/display_folded = true
 
 transform/pos = Vector2( 1651.79, 281.737 )
 
+[node name="level3" parent="levels" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+
 [node name="player" parent="." instance=ExtResource( 6 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 354.906, 433.419 )
 transform/rot = 0.458661
+gravity_scale = 0.0
 player_initial_mass = 90.0
 
 [node name="camera" parent="." instance=ExtResource( 7 )]
@@ -54,4 +64,5 @@ player_initial_mass = 90.0
 
 [editable path="levels/level1"]
 [editable path="levels/level2"]
+[editable path="levels/level3"]
 [editable path="player"]
