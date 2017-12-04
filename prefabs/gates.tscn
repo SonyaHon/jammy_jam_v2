@@ -4,12 +4,12 @@
 [ext_resource path="res://sprites/Door.png" type="Texture" id=2]
 [ext_resource path="res://prefabs/wall_corner.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.33451, 63.9072 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.39162, 60.1833 )
@@ -53,10 +53,9 @@ is_opened = false
 
 [node name="door1" type="StaticBody2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 0, -64 )
+transform/pos = Vector2( 0, -60 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.01811, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -76,16 +75,15 @@ region_rect = Rect2( 0, 0, 64, 128 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door1"]
 
 transform/pos = Vector2( 1.01811, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="door2" type="StaticBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 60 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.946671, 0.252884 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -106,16 +104,16 @@ region_rect = Rect2( 0, 128, 64, 120 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door2"]
 
 transform/pos = Vector2( 0.946671, 0.252884 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="passed" type="Area2D" parent="."]
 
-transform/pos = Vector2( 14.5242, 0.880257 )
+transform/pos = Vector2( 20, 0 )
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 0.554076, 11, 0.0099678 )
+shapes/0/transform = Matrix32( 1, 0, 0, 0.554076, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -124,7 +122,6 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passed"]
 
-transform/pos = Vector2( 11, 0.0099678 )
 transform/scale = Vector2( 1, 0.554076 )
 shape = SubResource( 3 )
 trigger = false

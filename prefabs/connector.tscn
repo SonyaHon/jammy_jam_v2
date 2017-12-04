@@ -13,23 +13,21 @@ script/script = ExtResource( 1 )
 
 [node name="floor" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="floor" parent="floor" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 0, 32 )
 
 [node name="floor5" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -62, 32 )
+transform/pos = Vector2( -64, 32 )
 
 [node name="floor4 4" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 0, 95 )
+transform/pos = Vector2( 0, 96 )
 
 [node name="floor45" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -62, 95 )
+transform/pos = Vector2( -64, 96 )
 
 [node name="floor3 2" parent="floor" instance=ExtResource( 2 )]
 
@@ -37,7 +35,7 @@ transform/pos = Vector2( 254, 32 )
 
 [node name="floor33" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 254, 95 )
+transform/pos = Vector2( 256, 96 )
 
 [node name="floor2" parent="floor" instance=ExtResource( 2 )]
 
@@ -45,7 +43,7 @@ transform/pos = Vector2( 127, 32 )
 
 [node name="floor4 3" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 127, 95 )
+transform/pos = Vector2( 128, 96 )
 
 [node name="floor3" parent="floor" instance=ExtResource( 2 )]
 
@@ -53,7 +51,7 @@ transform/pos = Vector2( 381, 32 )
 
 [node name="floor4" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 381, 95 )
+transform/pos = Vector2( 384, 96 )
 
 [node name="floor1" parent="floor" instance=ExtResource( 2 )]
 
@@ -61,7 +59,7 @@ transform/pos = Vector2( 64, 32 )
 
 [node name="floor4 2" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 64, 95 )
+transform/pos = Vector2( 64, 96 )
 
 [node name="floor3 3" parent="floor" instance=ExtResource( 2 )]
 
@@ -69,7 +67,7 @@ transform/pos = Vector2( 318, 32 )
 
 [node name="floor34" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 318, 95 )
+transform/pos = Vector2( 320, 96 )
 
 [node name="floor2 2" parent="floor" instance=ExtResource( 2 )]
 
@@ -77,7 +75,7 @@ transform/pos = Vector2( 190, 32 )
 
 [node name="floor210" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 190, 95 )
+transform/pos = Vector2( 192, 96 )
 
 [node name="floor23" parent="floor" instance=ExtResource( 2 )]
 
@@ -85,7 +83,7 @@ transform/pos = Vector2( 445, 32 )
 
 [node name="floor30" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 445, 95 )
+transform/pos = Vector2( 448, 96 )
 
 [node name="floor24" parent="floor" instance=ExtResource( 2 )]
 
@@ -113,35 +111,35 @@ transform/pos = Vector2( 701, 95 )
 
 [node name="floor27" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 509, 95 )
+transform/pos = Vector2( 512, 96 )
 
 [node name="floor29 5" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 573, 95 )
+transform/pos = Vector2( 576, 96 )
 
 [node name="floor28" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 509, 159 )
+transform/pos = Vector2( 512, 160 )
 
 [node name="floor29 2" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 573, 159 )
+transform/pos = Vector2( 576, 160 )
 
 [node name="floor25" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 509, -31 )
+transform/pos = Vector2( 512, -32 )
 
 [node name="floor29" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 573, -31 )
+transform/pos = Vector2( 576, -32 )
 
 [node name="floor26" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 509, -95 )
+transform/pos = Vector2( 512, -96 )
 
 [node name="floor29 3" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 573, -95 )
+transform/pos = Vector2( 576, -96 )
 
 [node name="wallTop" type="Node2D" parent="."]
 
@@ -152,130 +150,127 @@ transform/pos = Vector2( 0, -16 )
 
 [node name="wall3" parent="wallTop" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 254.165, -0.129898 )
+transform/pos = Vector2( 256, 0 )
 
 [node name="wall2" parent="wallTop" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 127.283, -0.0732422 )
+transform/pos = Vector2( 128, 0 )
 
 [node name="wall3 3" parent="wallTop" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 381.448, -0.20314 )
+transform/pos = Vector2( 384, 0 )
 
 [node name="wall34" parent="wallTop" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 541.258, -95.6758 )
+transform/pos = Vector2( 544, -96 )
 
 [node name="wall1" parent="wallTop" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 63.6518, 0 )
+transform/pos = Vector2( 64, 0 )
 
 [node name="wall3 2" parent="wallTop" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 317.817, -0.129898 )
+transform/pos = Vector2( 320, 0 )
 
 [node name="wall2 2" parent="wallTop" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 190.935, -0.0732422 )
+transform/pos = Vector2( 192, 0 )
 
 [node name="wall_corner" parent="wallTop" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 445.521, -15.8217 )
+transform/pos = Vector2( 448, -16 )
 transform/rot = 180.0
 
 [node name="wall_corner1" parent="wallTop" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 477.352, -79.7086 )
+transform/pos = Vector2( 480, -80 )
 transform/rot = 360.0
 
 [node name="wall_corner3" parent="wallTop" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 605.353, -79.7138 )
+transform/pos = Vector2( 608, -80 )
 transform/rot = -89.9671
 
 [node name="wall_corner3 2" parent="wallTop" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 637.353, -15.7138 )
+transform/pos = Vector2( 640, -16 )
 transform/rot = 90.0329
 
 [node name="wallTop1" type="Node2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 446, 112 )
+transform/pos = Vector2( 448, 112 )
 transform/rot = 180.033
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="wall_corner1" parent="wallTop1" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -0.34433, -15.7749 )
+transform/pos = Vector2( 0.00921631, -16 )
 transform/rot = 90.0
 
 [node name="wall_corner2" parent="wallTop1" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -32.3076, -79.7932 )
+transform/pos = Vector2( -31.9539, -80.0184 )
 transform/rot = 270.0
 
 [node name="wall3" parent="wallTop1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 254.165, -0.129898 )
+transform/pos = Vector2( 256, 0.147484 )
 
 [node name="wall2" parent="wallTop1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 127.283, -0.0732422 )
+transform/pos = Vector2( 128, 0.0737381 )
 
 [node name="wall4" parent="wallTop1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -96.2104, -95.696 )
+transform/pos = Vector2( -95.9447, -96.0553 )
 
 [node name="wall3 3" parent="wallTop1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 381.448, -0.20314 )
+transform/pos = Vector2( 384, 0.221222 )
 
 [node name="wall1" parent="wallTop1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 63.6518, 0 )
+transform/pos = Vector2( 64, 0.0368729 )
 
 [node name="wall3 2" parent="wallTop1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 317.817, -0.129898 )
+transform/pos = Vector2( 320, 0.184357 )
 
 [node name="wall2 2" parent="wallTop1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 190.935, -0.0732422 )
+transform/pos = Vector2( 192, 0.110611 )
 
 [node name="wall23" parent="wallTop1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 445.1, -0.20314 )
+transform/pos = Vector2( 448, 0.258095 )
 
 [node name="wall_corner2 2" parent="wallTop1" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -160.203, -79.7224 )
+transform/pos = Vector2( -159.954, -80.0922 )
 transform/rot = -0.0328532
 
 [node name="wall_corner2 3" parent="wallTop1" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -192.07, -15.8539 )
+transform/pos = Vector2( -191.991, -16.1106 )
 transform/rot = 179.967
 
 [node name="healing_station" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 543.888, -46.6541 )
+transform/pos = Vector2( 544, -48 )
 
 [node name="enter" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( -79.2847, 48.2847 )
+transform/pos = Vector2( -80, 48 )
 
 [node name="exit" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 717.027, 47.6502 )
+editor/display_folded = true
+transform/pos = Vector2( 720, 48 )
 transform/rot = 180.0
 is_opened = true
 
 [node name="door1" parent="exit"]
 
-editor/display_folded = false
 transform/pos = Vector2( 0, -95 )
 
 [node name="door2" parent="exit"]
@@ -287,4 +282,5 @@ transform/pos = Vector2( 0, 90 )
 transform/pos = Vector2( -34.7701, -1.32038 )
 
 
+[editable path="enter"]
 [editable path="exit"]

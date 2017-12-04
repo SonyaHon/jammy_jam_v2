@@ -18,6 +18,7 @@ current_level = NodePath("levels/level1")
 
 [node name="level1" parent="levels" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 next_level = NodePath("levels/level2")
 
 [node name="connector" parent="levels/level1/connector" instance=ExtResource( 3 )]
@@ -36,6 +37,7 @@ slime_spawn_delay = 1
 
 [node name="level2" parent="levels" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 1413.32, 201.337 )
 next_level = NodePath("levels/test")
 
@@ -59,12 +61,33 @@ slime_spawn_delay = 1
 [node name="level3" parent="levels" instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 4516.99, 232.259 )
+transform/pos = Vector2( 4688, 304 )
 
 [node name="test" parent="levels" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 2392.77, 395.909 )
+transform/pos = Vector2( 2848, 736 )
 next_level = NodePath("../level3")
+
+[node name="floor" parent="levels/test"]
+
+editor/display_folded = true
+
+[node name="puddles" parent="levels/test"]
+
+editor/display_folded = true
+
+[node name="connector" parent="levels/test/connector"]
+
+transform/pos = Vector2( 1184, -112 )
+
+[node name="wall22" parent="levels/test/walls"]
+
+transform/pos = Vector2( 960, -208 )
+transform/rot = 0.0
+
+[node name="wall28" parent="levels/test/walls"]
+
+transform/rot = 0.0
 
 [node name="player" parent="." instance=ExtResource( 7 )]
 
