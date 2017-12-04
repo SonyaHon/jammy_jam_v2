@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://prefabs/Level.tscn" type="PackedScene" id=2]
@@ -9,11 +9,10 @@
 [ext_resource path="res://prefabs/invert_corner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://prefabs/wall_corner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://prefabs/column.tscn" type="PackedScene" id=9]
-[ext_resource path="res://prefabs/gates.tscn" type="PackedScene" id=10]
-[ext_resource path="res://prefabs/slime_spawner.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=12]
-[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=13]
-[ext_resource path="res://prefabs/camera.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefabs/slime_spawner.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefabs/camera.tscn" type="PackedScene" id=13]
 
 [node name="world" type="Node"]
 
@@ -1282,7 +1281,7 @@ editor/display_folded = true
 
 [node name="connector" parent="levels/level1/connector" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1650.17, 157.666 )
+transform/pos = Vector2( 1112.55, 320 )
 
 [node name="walls" parent="levels/level1"]
 
@@ -1572,11 +1571,6 @@ transform/scale = Vector2( 2, 2 )
 transform/pos = Vector2( 130, 210.196 )
 transform/scale = Vector2( 2, 2 )
 
-[node name="gates" parent="levels/level1/walls" instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 1034.27, 330.957 )
-transform/scale = Vector2( 1, 2.02643 )
-
 [node name="column 3" parent="levels/level1/walls" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 349.561, 90 )
@@ -1606,14 +1600,14 @@ transform/rot = 179.794
 
 editor/display_folded = true
 
-[node name="slime_spawner 1" parent="levels/level1/spawners" instance=ExtResource( 11 )]
+[node name="slime_spawner 1" parent="levels/level1/spawners" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( -51.0835, -117.736 )
 transform/scale = Vector2( 1.18178, 1 )
 slime_number = 3
 slime_spawn_delay = 4
 
-[node name="slime_spawner" parent="levels/level1/spawners" instance=ExtResource( 11 )]
+[node name="slime_spawner" parent="levels/level1/spawners" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( -50.1841, 798.948 )
 transform/rot = -179.833
@@ -1624,23 +1618,23 @@ slime_spawn_delay = 4
 
 editor/display_folded = true
 
-[node name="enemy" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+[node name="enemy" parent="levels/level1/enemies" instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 467.443, 211.962 )
 
-[node name="enemy 2" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+[node name="enemy 2" parent="levels/level1/enemies" instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 209.561, 580 )
 
-[node name="enemy 3" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+[node name="enemy 3" parent="levels/level1/enemies" instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 460.919, 491.049 )
 
-[node name="enemy 4" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+[node name="enemy 4" parent="levels/level1/enemies" instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 462.229, 347.225 )
 
-[node name="enemy 5" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+[node name="enemy 5" parent="levels/level1/enemies" instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 208.276, 100.557 )
 
@@ -1650,20 +1644,16 @@ editor/display_folded = true
 transform/pos = Vector2( 13.197, 143.41 )
 next_level = NodePath("../level3")
 
-[node name="connector" parent="levels/level2"]
-
-editor/display_folded = true
-
 [node name="connector" parent="levels/level2/connector" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1651.79, 281.737 )
+transform/pos = Vector2( 1924.82, 173.962 )
 
 [node name="level3" parent="levels" instance=ExtResource( 2 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 16.6832, 121.918 )
 
-[node name="player" parent="." instance=ExtResource( 13 )]
+[node name="player" parent="." instance=ExtResource( 12 )]
 
 editor/display_folded = true
 transform/pos = Vector2( -117.745, 338.821 )
@@ -1671,7 +1661,7 @@ transform/rot = 0.458661
 gravity_scale = 0.0
 player_initial_mass = 90.0
 
-[node name="camera" parent="." instance=ExtResource( 14 )]
+[node name="camera" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 112.357, 33.9192 )
 
