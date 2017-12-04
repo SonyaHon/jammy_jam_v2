@@ -273,6 +273,15 @@ transform/pos = Vector2( 717.027, 47.6502 )
 transform/rot = 180.0
 is_opened = true
 
+[node name="door1" parent="exit"]
+
+editor/display_folded = false
+transform/pos = Vector2( 0, -95 )
+
+[node name="door2" parent="exit"]
+
+transform/pos = Vector2( 0, 90 )
+
 [node name="passed" parent="exit"]
 
 transform/pos = Vector2( -34.7701, -1.32038 )
