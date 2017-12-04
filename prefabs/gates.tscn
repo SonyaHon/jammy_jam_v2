@@ -1,15 +1,17 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://sprites/gates.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Door.png" type="Texture" id=2]
-[ext_resource path="res://prefabs/wall_corner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/invert_corner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/Single wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/Single wall.gd" type="Script" id=5]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.33451, 63.9072 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.39162, 60.1833 )
@@ -56,7 +58,7 @@ is_opened = false
 editor/display_folded = true
 transform/pos = Vector2( 0, -64 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.01811, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -76,7 +78,7 @@ region_rect = Rect2( 0, 0, 64, 128 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door1"]
 
 transform/pos = Vector2( 1.01811, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -85,7 +87,7 @@ _update_shape_index = 0
 editor/display_folded = true
 transform/pos = Vector2( 0, 60 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.946671, 0.252884 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -106,12 +108,13 @@ region_rect = Rect2( 0, 128, 64, 120 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door2"]
 
 transform/pos = Vector2( 0.946671, 0.252884 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="passed" type="Area2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 14.5242, 0.880257 )
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
@@ -141,13 +144,36 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="wall_corner" parent="." instance=ExtResource( 3 )]
+[node name="invert_corner" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 16, 80 )
+transform/pos = Vector2( 0.75354, 66.2011 )
 
-[node name="wall_corner1" parent="." instance=ExtResource( 3 )]
+[node name="Single wall" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 16, -80 )
-transform/rot = 90.0
+transform/pos = Vector2( 32.5682, 71.2437 )
+transform/rot = -179.91
+script/script = ExtResource( 5 )
+
+[node name="Single wall 2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 5.6449, 98.4392 )
+transform/rot = -89.8265
+script/script = ExtResource( 5 )
+
+[node name="invert_corner 2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 0.385307, -62.9128 )
+transform/rot = 90.0169
+
+[node name="Single wall 3" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 32.7034, -67.7598 )
+script/script = ExtResource( 5 )
+
+[node name="Single wall 4" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 5.60864, -94.8546 )
+transform/rot = -89.9608
+script/script = ExtResource( 5 )
 
 

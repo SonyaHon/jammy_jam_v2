@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://prefabs/Level.tscn" type="PackedScene" id=2]
-[ext_resource path="res://prefabs/connector.tscn" type="PackedScene" id=3]
-[ext_resource path="res://prefabs/wall_corner.tscn" type="PackedScene" id=4]
-[ext_resource path="res://prefabs/slime_spawner.tscn" type="PackedScene" id=5]
-[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://prefabs/camera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/speed_padle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/connector.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefabs/wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/invert_corner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/wall_corner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/column.tscn" type="PackedScene" id=9]
+[ext_resource path="res://prefabs/gates.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/slime_spawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefabs/camera.tscn" type="PackedScene" id=14]
 
 [node name="world" type="Node"]
 
@@ -18,50 +25,1655 @@ current_level = NodePath("levels/level1")
 [node name="level1" parent="levels" instance=ExtResource( 2 )]
 
 editor/display_folded = true
+transform/pos = Vector2( 0.439484, 0 )
 next_level = NodePath("../level2")
 
-[node name="connector" parent="levels/level1/connector" instance=ExtResource( 3 )]
+[node name="floor" parent="levels/level1"]
 
-transform/pos = Vector2( 519.663, 357.778 )
+editor/display_folded = true
 
-[node name="wall_corner" parent="levels/level1/walls" instance=ExtResource( 4 )]
+[node name="floor" parent="levels/level1/floor" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 170.257, 266.489 )
+transform/pos = Vector2( -68.4395, -68 )
 
-[node name="slime_spawner" parent="levels/level1/spawners" instance=ExtResource( 5 )]
+[node name="floor1" parent="levels/level1/floor" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 218.153, 250.737 )
-slime_number = 2
-slime_spawn_delay = 1
+transform/pos = Vector2( -68.4395, 232 )
+
+[node name="floor2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -68.4395, 292 )
+
+[node name="floor34 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -68.4395, 352 )
+
+[node name="floor343" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -68.4395, 412 )
+
+[node name="floor344" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -78.4395, 472 )
+
+[node name="floor345" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -78.4395, 532 )
+
+[node name="floor346 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -78.4395, 592 )
+
+[node name="floor3463" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -68.4395, 652 )
+
+[node name="floor3464" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -68.4395, 712 )
+
+[node name="floor3465" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -68.4395, 772 )
+
+[node name="floor3466" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -68.4395, 772 )
+
+[node name="floor 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, -68 )
+
+[node name="floor3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, 232 )
+
+[node name="floor33 14" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, 292 )
+
+[node name="floor3315" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, 352 )
+
+[node name="floor3316 5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, 412 )
+
+[node name="floor33166" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -18.4395, 472 )
+
+[node name="floor33168 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -18.4395, 532 )
+
+[node name="floor331683" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -18.4395, 592 )
+
+[node name="floor331687" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, 652 )
+
+[node name="floor331688" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, 712 )
+
+[node name="floor331689" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, 772 )
+
+[node name="floor331690" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -8.43948, 772 )
+
+[node name="floor 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, -68 )
+
+[node name="floor4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, 232 )
+
+[node name="floor33 12" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, 292 )
+
+[node name="floor3313" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, 352 )
+
+[node name="floor3316 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, 412 )
+
+[node name="floor33164" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 41.5605, 472 )
+
+[node name="floor33168 5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 41.5605, 532 )
+
+[node name="floor331686" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 41.5605, 592 )
+
+[node name="floor331687 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, 652 )
+
+[node name="floor3316875" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, 712 )
+
+[node name="floor3316876 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, 772 )
+
+[node name="floor33168764" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 51.5605, 772 )
+
+[node name="floor 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, -68 )
+
+[node name="floor5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, 232 )
+
+[node name="floor33 9" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, 292 )
+
+[node name="floor3310" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, 352 )
+
+[node name="floor3316 6" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, 412 )
+
+[node name="floor33167" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 101.561, 472 )
+
+[node name="floor33168" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 101.561, 532 )
+
+[node name="floor33169" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 101.561, 592 )
+
+[node name="floor33170" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, 652 )
+
+[node name="floor33171" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, 712 )
+
+[node name="floor33172" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, 772 )
+
+[node name="floor33173" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 111.561, 772 )
+
+[node name="floor 5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, -68 )
+
+[node name="floor6" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, 232 )
+
+[node name="floor33 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, 292 )
+
+[node name="floor335" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, 352 )
+
+[node name="floor340 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, 412 )
+
+[node name="floor3405" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 161.561, 472 )
+
+[node name="floor3409 6" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 161.561, 532 )
+
+[node name="floor34097" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 161.561, 592 )
+
+[node name="floor34098 5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, 652 )
+
+[node name="floor340986" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, 712 )
+
+[node name="floor340987 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, 772 )
+
+[node name="floor3409875" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 171.561, 772 )
+
+[node name="floor 6" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, -68 )
+
+[node name="floor7" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, 232 )
+
+[node name="floor33 13" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, 292 )
+
+[node name="floor3314" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, 352 )
+
+[node name="floor3316 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, 412 )
+
+[node name="floor33163" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 221.561, 472 )
+
+[node name="floor33168 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 221.561, 532 )
+
+[node name="floor331684" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 221.561, 592 )
+
+[node name="floor331687 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, 652 )
+
+[node name="floor3316873" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, 712 )
+
+[node name="floor3316876 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, 772 )
+
+[node name="floor33168763" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 231.561, 772 )
+
+[node name="floor 7" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, -68 )
+
+[node name="floor8" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, 232 )
+
+[node name="floor33" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, 292 )
+
+[node name="floor34" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, 352 )
+
+[node name="floor35" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, 412 )
+
+[node name="floor36" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 281.561, 472 )
+
+[node name="floor37" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 279.561, 530 )
+
+[node name="floor38" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 281.561, 592 )
+
+[node name="floor39" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, 652 )
+
+[node name="floor40" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, 712 )
+
+[node name="floor41" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, 772 )
+
+[node name="floor42" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 291.561, 772 )
+
+[node name="floor 8" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351.561, -68 )
+
+[node name="floor9" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351.561, 232 )
+
+[node name="floor33 11" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351.561, 292 )
+
+[node name="floor3312" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351.561, 352 )
+
+[node name="floor3316" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 349.561, 410 )
+
+[node name="floor3317" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 341.561, 472 )
+
+[node name="floor3318" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 341.561, 532 )
+
+[node name="floor3319" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 341.561, 592 )
+
+[node name="floor3320" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351.561, 652 )
+
+[node name="floor3321" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351.561, 712 )
+
+[node name="floor3322" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351.561, 772 )
+
+[node name="floor3323" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351.561, 772 )
+
+[node name="floor 9" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, -68 )
+
+[node name="floor10" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, 232 )
+
+[node name="floor33 7" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, 292 )
+
+[node name="floor338" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, 352 )
+
+[node name="floor340 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, 412 )
+
+[node name="floor3404" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 401.561, 472 )
+
+[node name="floor3409 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 401.561, 532 )
+
+[node name="floor34095" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 401.561, 592 )
+
+[node name="floor34098 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, 652 )
+
+[node name="floor340985" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, 712 )
+
+[node name="floor340987" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, 772 )
+
+[node name="floor340988" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 411.561, 772 )
+
+[node name="floor 10" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, -68 )
+
+[node name="floor11" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, 232 )
+
+[node name="floor33 8" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, 292 )
+
+[node name="floor339" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, 352 )
+
+[node name="floor340 5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, 412 )
+
+[node name="floor3406" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 461.561, 472 )
+
+[node name="floor3409" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 461.561, 532 )
+
+[node name="floor3410" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 461.561, 592 )
+
+[node name="floor3411" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, 652 )
+
+[node name="floor3412" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, 712 )
+
+[node name="floor3413" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, 772 )
+
+[node name="floor3414" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 471.561, 772 )
+
+[node name="floor 11" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, -68 )
+
+[node name="floor12" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, 232 )
+
+[node name="floor33 5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, 292 )
+
+[node name="floor336" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, 352 )
+
+[node name="floor340" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, 412 )
+
+[node name="floor341" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 519.561, 470 )
+
+[node name="floor342" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 521.561, 532 )
+
+[node name="floor346" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 521.561, 592 )
+
+[node name="floor347" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, 652 )
+
+[node name="floor348" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, 712 )
+
+[node name="floor349" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, 772 )
+
+[node name="floor350" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 531.561, 772 )
+
+[node name="floor 12" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, -68 )
+
+[node name="floor13" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, 232 )
+
+[node name="floor33 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, 292 )
+
+[node name="floor333" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, 352 )
+
+[node name="floor340 6" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, 412 )
+
+[node name="floor3407" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 581.561, 472 )
+
+[node name="floor3409 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 581.561, 532 )
+
+[node name="floor34094" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 581.561, 592 )
+
+[node name="floor34098 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, 652 )
+
+[node name="floor340984" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, 712 )
+
+[node name="floor340987 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, 772 )
+
+[node name="floor3409874" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 591.561, 772 )
+
+[node name="floor 13" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, -68 )
+
+[node name="floor14" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, 232 )
+
+[node name="floor33 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, 292 )
+
+[node name="floor334" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, 352 )
+
+[node name="floor340 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, 412 )
+
+[node name="floor3403" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 641.561, 472 )
+
+[node name="floor3409 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 641.561, 532 )
+
+[node name="floor34093" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 641.561, 592 )
+
+[node name="floor34098" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, 652 )
+
+[node name="floor34099" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, 712 )
+
+[node name="floor34100" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, 772 )
+
+[node name="floor34101" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 651.561, 772 )
+
+[node name="floor 14" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, -68 )
+
+[node name="floor15" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, 232 )
+
+[node name="floor33 10" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, 292 )
+
+[node name="floor3311" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, 352 )
+
+[node name="floor3316 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, 412 )
+
+[node name="floor33165" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 701.561, 472 )
+
+[node name="floor33168 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 701.561, 532 )
+
+[node name="floor331685" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 701.561, 592 )
+
+[node name="floor331687 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, 652 )
+
+[node name="floor3316874" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, 712 )
+
+[node name="floor3316876" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, 772 )
+
+[node name="floor3316877" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 711.561, 772 )
+
+[node name="floor 15" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, -68 )
+
+[node name="floor16" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, 232 )
+
+[node name="floor33 6" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, 292 )
+
+[node name="floor337" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, 352 )
+
+[node name="floor340 7" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, 412 )
+
+[node name="floor3408" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 761.561, 472 )
+
+[node name="floor3409 5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 761.561, 532 )
+
+[node name="floor34096" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 761.561, 592 )
+
+[node name="floor34098 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, 652 )
+
+[node name="floor340983" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, 712 )
+
+[node name="floor340987 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, 772 )
+
+[node name="floor3409873" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 771.561, 772 )
+
+[node name="floor 16" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -71.6093, -9.43832 )
+
+[node name="floor17" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -71.6093, 110.562 )
+
+[node name="floor32 15" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -71.6093, 170.562 )
+
+[node name="floor 17" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -11.6093, -9.43832 )
+
+[node name="floor18" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -11.6093, 110.562 )
+
+[node name="floor32 4" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -11.6093, 170.562 )
+
+[node name="floor 18" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 48.3907, -9.43832 )
+
+[node name="floor19" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 48.3907, 110.562 )
+
+[node name="floor32 8" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 48.3907, 170.562 )
+
+[node name="floor 19" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 108.391, -9.43832 )
+
+[node name="floor20" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 108.391, 110.562 )
+
+[node name="floor32 10" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 108.391, 170.562 )
+
+[node name="floor 20" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 168.391, -9.43832 )
+
+[node name="floor21" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 168.391, 110.562 )
+
+[node name="floor32 12" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 168.391, 170.562 )
+
+[node name="floor 21" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 228.391, -9.43832 )
+
+[node name="floor22" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 228.391, 110.562 )
+
+[node name="floor32 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 228.391, 170.562 )
+
+[node name="floor 22" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 288.391, -9.43832 )
+
+[node name="floor23" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 288.391, 110.562 )
+
+[node name="floor32 11" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 288.391, 170.562 )
+
+[node name="floor 23" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 348.391, -9.43832 )
+
+[node name="floor24" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 348.391, 110.562 )
+
+[node name="floor32 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 348.391, 170.562 )
+
+[node name="floor 24" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 408.391, -9.43832 )
+
+[node name="floor25" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 408.391, 110.562 )
+
+[node name="floor32 5" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 408.391, 170.562 )
+
+[node name="floor 25" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 468.391, -9.43832 )
+
+[node name="floor26" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 468.391, 110.562 )
+
+[node name="floor32 7" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 468.391, 170.562 )
+
+[node name="floor 26" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 528.391, -9.43832 )
+
+[node name="floor27" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 528.391, 110.562 )
+
+[node name="floor32 14" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 528.391, 170.562 )
+
+[node name="floor 27" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 588.391, -9.43832 )
+
+[node name="floor28" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 588.391, 110.562 )
+
+[node name="floor32 9" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 588.391, 170.562 )
+
+[node name="floor 28" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 648.391, -9.43832 )
+
+[node name="floor29" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 648.391, 110.562 )
+
+[node name="floor32" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 648.391, 170.562 )
+
+[node name="floor 29" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 708.391, -9.43832 )
+
+[node name="floor30" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 708.391, 110.562 )
+
+[node name="floor32 13" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 708.391, 170.562 )
+
+[node name="floor 30" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 768.391, -9.43832 )
+
+[node name="floor31" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 768.391, 110.562 )
+
+[node name="floor32 6" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 768.391, 170.562 )
+
+[node name="floor 31" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -70.4395, 50 )
+
+[node name="floor 32" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -10.4395, 50 )
+
+[node name="floor 33" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 49.5605, 50 )
+
+[node name="floor 34" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 109.561, 50 )
+
+[node name="floor 35" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 169.561, 50 )
+
+[node name="floor 36" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 229.561, 50 )
+
+[node name="floor 37" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 289.561, 50 )
+
+[node name="floor 38" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 349.561, 50 )
+
+[node name="floor 39" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 409.561, 50 )
+
+[node name="floor 40" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 469.561, 50 )
+
+[node name="floor 41" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 529.561, 50 )
+
+[node name="floor 42" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 589.561, 50 )
+
+[node name="floor 43" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 649.561, 50 )
+
+[node name="floor 44" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 709.561, 50 )
+
+[node name="floor 45" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 769.561, 50 )
+
+[node name="floor46" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 888.391, -9.43832 )
+
+[node name="floor47" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 888.391, 110.562 )
+
+[node name="floor48" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 888.391, 170.562 )
+
+[node name="floor 46" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, -68 )
+
+[node name="floor49 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, 232 )
+
+[node name="floor493" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, 292 )
+
+[node name="floor495" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, 352 )
+
+[node name="floor496" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, 412 )
+
+[node name="floor497" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 821.561, 472 )
+
+[node name="floor498" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 821.561, 532 )
+
+[node name="floor499" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 821.561, 592 )
+
+[node name="floor500" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, 652 )
+
+[node name="floor501" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, 712 )
+
+[node name="floor502" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, 772 )
+
+[node name="floor503" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 831.561, 772 )
+
+[node name="floor 47" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, -68 )
+
+[node name="floor49" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, 232 )
+
+[node name="floor59" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, 292 )
+
+[node name="floor60" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, 352 )
+
+[node name="floor61" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, 412 )
+
+[node name="floor62" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 881.561, 472 )
+
+[node name="floor63" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 881.561, 532 )
+
+[node name="floor64" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 881.561, 592 )
+
+[node name="floor65" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, 652 )
+
+[node name="floor66" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, 712 )
+
+[node name="floor67" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, 772 )
+
+[node name="floor68" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 891.561, 772 )
+
+[node name="floor 48" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, -68 )
+
+[node name="floor49 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, 232 )
+
+[node name="floor494" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, 292 )
+
+[node name="floor495 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, 352 )
+
+[node name="floor4953" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, 412 )
+
+[node name="floor4954" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 941.561, 472 )
+
+[node name="floor4955" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 941.561, 532 )
+
+[node name="floor4956" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 941.561, 592 )
+
+[node name="floor4957" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, 652 )
+
+[node name="floor4958" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, 712 )
+
+[node name="floor4959" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, 772 )
+
+[node name="floor4960" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 951.561, 772 )
+
+[node name="floor 49" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, -68 )
+
+[node name="floor50" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, 232 )
+
+[node name="floor59 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, 292 )
+
+[node name="floor593" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, 352 )
+
+[node name="floor594" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, 412 )
+
+[node name="floor595" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1001.56, 472 )
+
+[node name="floor596" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1001.56, 532 )
+
+[node name="floor597" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1001.56, 592 )
+
+[node name="floor598" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, 652 )
+
+[node name="floor599" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, 712 )
+
+[node name="floor600" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, 772 )
+
+[node name="floor601" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1011.56, 772 )
+
+[node name="floor 50" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 828.391, -9.43832 )
+
+[node name="floor51" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 828.391, 110.562 )
+
+[node name="floor58 3" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 828.391, 170.562 )
+
+[node name="floor 51" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 948.391, -9.43832 )
+
+[node name="floor52" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 948.391, 110.562 )
+
+[node name="floor58 2" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 948.391, 170.562 )
+
+[node name="floor 52" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1008.39, -9.43832 )
+
+[node name="floor53" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1008.39, 110.562 )
+
+[node name="floor58" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1008.39, 170.562 )
+
+[node name="floor 53" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 829.561, 50 )
+
+[node name="floor54" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 889.561, 50 )
+
+[node name="floor55" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 949.561, 50 )
+
+[node name="floor56" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1009.56, 50 )
+
+[node name="floor57" parent="levels/level1/floor" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1009.56, 50 )
+
+[node name="puddles" parent="levels/level1"]
+
+editor/display_folded = true
+
+[node name="speed_padle" parent="levels/level1/puddles" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 121.587, 341.661 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="speed_padle 2" parent="levels/level1/puddles" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 693.179, 341.503 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="speed_padle 3" parent="levels/level1/puddles" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 519.561, 90 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="speed_padle 4" parent="levels/level1/puddles" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 526.23, 601.778 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="connector" parent="levels/level1"]
+
+editor/display_folded = true
+
+[node name="connector" parent="levels/level1/connector" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1650.17, 157.666 )
+
+[node name="walls" parent="levels/level1"]
+
+editor/display_folded = true
+
+[node name="wall 1" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -116.998, 215.02 )
+transform/rot = 90.1921
+
+[node name="invert_corner" parent="levels/level1/walls" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( -116.986, 262.951 )
+transform/rot = -179.33
+
+[node name="wall 2" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -116.935, 153.707 )
+transform/rot = 89.7804
+
+[node name="wall 3" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -117.08, 90.0656 )
+transform/rot = 89.8696
+
+[node name="wall_corner" parent="levels/level1/walls" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( -101.157, -101.261 )
+
+[node name="wall 4" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 127.177, -117.256 )
+
+[node name="wall 5" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -0.172943, -117.36 )
+
+[node name="wall 6" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 63.7733, -117.325 )
+
+[node name="wall 7" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -115.353, 463.817 )
+transform/rot = 89.963
+
+[node name="invert_corner 2" parent="levels/level1/walls" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( -115.249, 415.898 )
+transform/rot = -89.7097
+
+[node name="wall 8" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -115.319, 527.892 )
+transform/rot = 90.076
+
+[node name="wall 9" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -115.366, 591.895 )
+transform/rot = 90.0291
+
+[node name="wall_corner 2" parent="levels/level1/walls" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( -98.3414, 783.419 )
+transform/rot = 90.1176
+
+[node name="wall 10" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 57.5234, 799.161 )
+transform/rot = -179.87
+
+[node name="wall 11" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 117.523, 799.161 )
+transform/rot = 180.192
+
+[node name="wall" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 177.523, 799.161 )
+transform/rot = -179.843
+
+[node name="wall 12" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 237.523, 799.161 )
+transform/rot = -179.51
+
+[node name="wall 13" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 297.523, 799.161 )
+transform/rot = -179.86
+
+[node name="wall 14" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 357.523, 799.161 )
+transform/rot = -179.664
+
+[node name="wall 15" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 417.523, 799.161 )
+transform/rot = -179.723
+
+[node name="wall 16" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 477.523, 799.161 )
+transform/rot = -179.813
+
+[node name="wall 17" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 537.523, 799.161 )
+transform/rot = -179.631
+
+[node name="wall 18" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 597.523, 799.161 )
+transform/rot = -179.777
+
+[node name="wall_corner 3" parent="levels/level1/walls" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1019.55, 782.837 )
+transform/rot = -179.947
+
+[node name="wall 19" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 190.783, -117.699 )
+
+[node name="wall 20" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 254.755, -117.699 )
+
+[node name="wall 21" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 318.666, -117.652 )
+
+[node name="wall 22" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 381.916, -118 )
+
+[node name="wall 23" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 445.986, -117.954 )
+
+[node name="wall 24" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 509.738, -117.932 )
+
+[node name="wall 25" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 573.66, -118.046 )
+
+[node name="wall 26" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 637.694, -117.465 )
+transform/rot = -0.0432882
+
+[node name="wall_corner 4" parent="levels/level1/walls" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1018.39, -102.211 )
+transform/rot = -89.8054
+
+[node name="wall 27" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1033.23, -37.9695 )
+transform/rot = -89.9454
+
+[node name="wall28" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1033.23, 82.0305 )
+transform/rot = -89.9454
+
+[node name="wall29" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1033.23, 142.03 )
+transform/rot = -89.9454
+
+[node name="wall 28" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1034.04, 25.9951 )
+transform/rot = -89.7659
+
+[node name="wall 29" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1034.29, 89.895 )
+transform/rot = -90.1439
+
+[node name="wall 30" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -116.727, 26.204 )
+transform/rot = 89.776
+
+[node name="wall 31" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -115.139, 655.849 )
+transform/rot = 89.916
+
+[node name="wall 33" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1035.32, 718.796 )
+transform/rot = -90.0231
+
+[node name="wall 34" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -114.763, 719.42 )
+transform/rot = 90.1634
+
+[node name="wall 35" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -118.275, -37.2741 )
+transform/rot = 90.2948
+
+[node name="wall36" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -118.275, 82.7259 )
+transform/rot = 90.2948
+
+[node name="wall37" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -118.275, 142.726 )
+transform/rot = 90.2948
+
+[node name="wall 36" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 699.565, -117.186 )
+
+[node name="wall 37" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 763.344, -117.76 )
+
+[node name="wall 38" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 826.362, -117.77 )
+
+[node name="wall 42" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 890.504, -117.804 )
+
+[node name="wall 43" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 954.453, -118 )
+
+[node name="wall 44" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 657.523, 799.161 )
+transform/rot = -179.965
+
+[node name="wall 45" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 717.523, 799.161 )
+transform/rot = -179.887
+
+[node name="wall 46" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 777.523, 799.161 )
+transform/rot = 179.841
+
+[node name="wall 47" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 837.523, 799.161 )
+transform/rot = -179.931
+
+[node name="wall 51" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 897.523, 799.161 )
+transform/rot = -179.953
+
+[node name="wall 52" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 957.524, 799.161 )
+transform/rot = 179.955
+
+[node name="wall 53" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1035.14, 655.157 )
+transform/rot = -90.3931
+
+[node name="wall 54" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1035.28, 591.684 )
+transform/rot = -90.1694
+
+[node name="column" parent="levels/level1/walls" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 127.15, 467.584 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="column 2" parent="levels/level1/walls" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 130, 210.196 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="gates" parent="levels/level1/walls" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 1034.27, 330.957 )
+transform/scale = Vector2( 1, 2.02643 )
+
+[node name="column 3" parent="levels/level1/walls" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 349.561, 90 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="column 4" parent="levels/level1/walls" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 645.843, 183.932 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="column 5" parent="levels/level1/walls" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 354.53, 620.427 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="column 6" parent="levels/level1/walls" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 647.049, 495.472 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="wall 32" parent="levels/level1/walls" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2.47664, 799.161 )
+transform/rot = 179.794
+
+[node name="spawners" parent="levels/level1"]
+
+editor/display_folded = true
+
+[node name="slime_spawner 1" parent="levels/level1/spawners" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( -51.0835, -117.736 )
+transform/scale = Vector2( 1.18178, 1 )
+slime_number = 3
+slime_spawn_delay = 4
+
+[node name="slime_spawner" parent="levels/level1/spawners" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( -50.1841, 798.948 )
+transform/rot = -179.833
+slime_number = 3
+slime_spawn_delay = 4
+
+[node name="enemies" parent="levels/level1"]
+
+editor/display_folded = true
+
+[node name="enemy" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 467.443, 211.962 )
+
+[node name="enemy 2" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 209.561, 580 )
+
+[node name="enemy 3" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 460.919, 491.049 )
+
+[node name="enemy 4" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 462.229, 347.225 )
+
+[node name="enemy 5" parent="levels/level1/enemies" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 208.276, 100.557 )
 
 [node name="level2" parent="levels" instance=ExtResource( 2 )]
 
 editor/display_folded = true
+transform/pos = Vector2( 13.197, 143.41 )
 next_level = NodePath("../level3")
 
 [node name="connector" parent="levels/level2"]
 
 editor/display_folded = true
 
-[node name="connector" parent="levels/level2/connector" instance=ExtResource( 3 )]
+[node name="connector" parent="levels/level2/connector" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1651.79, 281.737 )
 
 [node name="level3" parent="levels" instance=ExtResource( 2 )]
 
 editor/display_folded = true
+transform/pos = Vector2( 16.6832, 121.918 )
 
-[node name="player" parent="." instance=ExtResource( 6 )]
+[node name="player" parent="." instance=ExtResource( 13 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 63.9896, 508.786 )
+transform/pos = Vector2( -117.745, 338.821 )
 transform/rot = 0.458661
 gravity_scale = 0.0
 player_initial_mass = 90.0
 
-[node name="camera" parent="." instance=ExtResource( 7 )]
+[node name="camera" parent="." instance=ExtResource( 14 )]
 
-editor/display_folded = true
+transform/pos = Vector2( 112.357, 33.9192 )
 
 [node name="GUI" type="CanvasLayer" parent="camera"]
 
@@ -76,10 +1688,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 24.0
-margin/top = 7.0
-margin/right = 73.0
-margin/bottom = 47.0
+margin/left = 30.0
+margin/top = 10.0
+margin/right = 95.0
+margin/bottom = 50.0
 split/offset = 0
 split/collapsed = false
 split/dragger_visibility = 1
