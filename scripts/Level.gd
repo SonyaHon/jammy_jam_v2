@@ -15,7 +15,7 @@ func _ready():
 	
 	var cntr = get_node("connector");
 	if cntr.get_child_count() == 1:
-		get_child(0).connect("passed", self, "ended");
+		cntr.get_child(0).connect("passed", self, "ended");
 	pass
 
 func ended():

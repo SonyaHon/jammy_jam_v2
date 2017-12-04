@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-onready var spawn_point = get_node("spawn_pos").get_global_pos();
+onready var spawn_point = get_node("spawn_pos").get_global_pos()-get_node("../../").get_global_pos()
 var slime = preload("res://scenes/enemy.tscn");
 
 export(int) var slime_number = 4;

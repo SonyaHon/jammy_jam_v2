@@ -29,7 +29,7 @@ func _ready():
 func change_level(lvl):
 	var prevAddr = current_level;
 	current_level = lvl
-	get_node(prevAddr).get_node(current_level).start();
+	get_node(current_level).start();
 	pass
 
 func end_game():

@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://prefabs/Level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefabs/connector.tscn" type="PackedScene" id=3]
 [ext_resource path="res://prefabs/wall_corner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://prefabs/slime_spawner.tscn" type="PackedScene" id=5]
-[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://prefabs/camera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Level_tetawex.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/camera.tscn" type="PackedScene" id=8]
 
 [node name="world" type="Node"]
 
@@ -17,8 +18,7 @@ current_level = NodePath("levels/level1")
 
 [node name="level1" parent="levels" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-next_level = NodePath("../level2")
+next_level = NodePath("levels/level2")
 
 [node name="connector" parent="levels/level1/connector" instance=ExtResource( 3 )]
 
@@ -28,30 +28,49 @@ transform/pos = Vector2( 519.663, 357.778 )
 
 transform/pos = Vector2( 170.257, 266.489 )
 
-[node name="slime_spawner" parent="levels/level1/spawners" instance=ExtResource( 5 )]
+[node name="slime_spawner1" parent="levels/level1/spawners" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 218.153, 250.737 )
-slime_number = 2
+transform/pos = Vector2( 301.484, 312.895 )
+slime_number = 0
 slime_spawn_delay = 1
 
 [node name="level2" parent="levels" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-next_level = NodePath("../level3")
-
-[node name="connector" parent="levels/level2"]
-
-editor/display_folded = true
+transform/pos = Vector2( 1413.32, 201.337 )
+next_level = NodePath("levels/test")
 
 [node name="connector" parent="levels/level2/connector" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1651.79, 281.737 )
+transform/pos = Vector2( 375.175, 163.787 )
+
+[node name="slime_spawner" parent="levels/level2/spawners" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 164.102, 307.326 )
+transform/rot = 144.613
+slime_number = 5
+slime_spawn_delay = 0
+
+[node name="slime_spawner 2" parent="levels/level2/spawners" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 60.4675, 214.795 )
+slime_number = 2
+slime_spawn_delay = 1
 
 [node name="level3" parent="levels" instance=ExtResource( 2 )]
 
 editor/display_folded = true
+transform/pos = Vector2( 4516.99, 232.259 )
 
-[node name="player" parent="." instance=ExtResource( 6 )]
+[node name="test" parent="levels" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2392.77, 395.909 )
+next_level = NodePath("../level3")
+
+[node name="walls" parent="levels/test"]
+
+editor/display_folded = false
+
+[node name="player" parent="." instance=ExtResource( 7 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 63.9896, 508.786 )
@@ -59,9 +78,11 @@ transform/rot = 0.458661
 gravity_scale = 0.0
 player_initial_mass = 90.0
 
-[node name="camera" parent="." instance=ExtResource( 7 )]
+[node name="camera" parent="." instance=ExtResource( 8 )]
 
-editor/display_folded = true
+transform/pos = Vector2( -591.351, -308.967 )
+offset = Vector2( 0, 0 )
+anchor_mode = 1
 
 [node name="GUI" type="CanvasLayer" parent="camera"]
 
@@ -168,4 +189,5 @@ max_lines_visible = -1
 [editable path="levels/level1"]
 [editable path="levels/level2"]
 [editable path="levels/level3"]
+[editable path="levels/test"]
 [editable path="player"]

@@ -86,8 +86,8 @@ func _on_collide(target):
 
 func _process(delta):
 	if started:
-		var nv = get_pos() - Utils.get_world_node("player").get_pos();
-		pl_body.get_node("sprite").set_rot(atan2(nv.x, nv.y));
+		var nv = get_global_pos() - Utils.get_world_node("player").get_global_pos();
+		pl_body.get_node("sprite").set_global_rot(atan2(nv.x, nv.y));
 		ai_update();
 		pass
 	
@@ -106,7 +106,7 @@ func ai_update():
 	# if in radius
 	# try to go around 
 	var pl = Utils.get_world_node("player");
-	var diff = get_pos() - pl.get_pos();
+	var diff = get_global_pos() - pl.get_global_pos();
 	var nacc  = sqrt(diff.x * diff.x  +  diff.y * diff.y);
 	if abs(nacc) < 100:
 		nacc = -50;
@@ -149,7 +149,7 @@ func _fixed_process(delta):
 
 func fire():
 	var b_instance = bullet.instance();
-	var direct = get_pos() - Utils.get_world_node("player").get_pos();
+	var direct = get_global_pos() - Utils.get_world_node("player").get_global_pos();
 	b_instance.set_pos(get_global_pos() - direct.normalized() * 30);
 	b_instance.add_to_group(Utils.GR_BULLET);
 	b_instance.set_linear_velocity(direct.normalized() * -600);
