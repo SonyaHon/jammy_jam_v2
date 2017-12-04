@@ -31,7 +31,7 @@ transform/pos = Vector2( -64, 96 )
 
 [node name="floor3 2" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 254, 32 )
+transform/pos = Vector2( 256, 32 )
 
 [node name="floor33" parent="floor" instance=ExtResource( 2 )]
 
@@ -39,7 +39,7 @@ transform/pos = Vector2( 256, 96 )
 
 [node name="floor2" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 127, 32 )
+transform/pos = Vector2( 128, 32 )
 
 [node name="floor4 3" parent="floor" instance=ExtResource( 2 )]
 
@@ -47,7 +47,7 @@ transform/pos = Vector2( 128, 96 )
 
 [node name="floor3" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 381, 32 )
+transform/pos = Vector2( 384, 32 )
 
 [node name="floor4" parent="floor" instance=ExtResource( 2 )]
 
@@ -63,7 +63,7 @@ transform/pos = Vector2( 64, 96 )
 
 [node name="floor3 3" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 318, 32 )
+transform/pos = Vector2( 320, 32 )
 
 [node name="floor34" parent="floor" instance=ExtResource( 2 )]
 
@@ -71,7 +71,7 @@ transform/pos = Vector2( 320, 96 )
 
 [node name="floor2 2" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 190, 32 )
+transform/pos = Vector2( 192, 32 )
 
 [node name="floor210" parent="floor" instance=ExtResource( 2 )]
 
@@ -79,7 +79,7 @@ transform/pos = Vector2( 192, 96 )
 
 [node name="floor23" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 445, 32 )
+transform/pos = Vector2( 448, 32 )
 
 [node name="floor30" parent="floor" instance=ExtResource( 2 )]
 
@@ -87,27 +87,27 @@ transform/pos = Vector2( 448, 96 )
 
 [node name="floor24" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 509, 32 )
+transform/pos = Vector2( 512, 32 )
 
 [node name="floor29 4" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 573, 32 )
+transform/pos = Vector2( 576, 32 )
 
 [node name="floor295" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 637, 32 )
+transform/pos = Vector2( 640, 32 )
 
 [node name="floor297 2" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 701, 32 )
+transform/pos = Vector2( 704, 32 )
 
 [node name="floor296" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 637, 95 )
+transform/pos = Vector2( 640, 96 )
 
 [node name="floor297" parent="floor" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 701, 95 )
+transform/pos = Vector2( 704, 96 )
 
 [node name="floor27" parent="floor" instance=ExtResource( 2 )]
 

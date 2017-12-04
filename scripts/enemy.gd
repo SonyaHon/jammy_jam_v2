@@ -35,6 +35,10 @@ var bullet = preload("res://prefabs/slime_bullet.tscn");
 
 var started = false;
 
+var attacked_timer_default = 1;
+var attacked_timer = 0;
+var has_been_attacked = false;
+
 func _ready():
 	add_to_group(Utils.GR_ENEMY);
 	set_process_input(true);
@@ -45,6 +49,7 @@ func _ready():
 	current_acceleration = Vector2(0, 0);
 	current_state = StateIdle.new(self);
 	connect("body_enter", self, "_on_collide");
+	attacked_timer = attacked_timer_default;
 	pass
 
 
@@ -73,19 +78,29 @@ func _on_collide(target):
 		change_state(STATE_DEATH);
 		pass
 	elif target.is_in_group(Utils.GR_BULLET):
-		current_velocity = target.get_linear_velocity()  * 3;
+		current_velocity = target.get_linear_velocity()  * 5;
+		has_been_attacked = true;
 		pass
 	elif target.is_in_group(Utils.GR_ENEMY):
-		if target.get_index() > get_index():
+		#if target.get_index() > get_index():
+		#target.change_state(STATE_DEATH);
+		#target.set_linear_velocity(Vector2(0,0));
+		#target.current_velocity = Vector2(0,0);
+		if target.has_been_attacked:
 			target.change_state(STATE_DEATH);
 			target.set_linear_velocity(Vector2(0,0));
 			target.current_velocity = Vector2(0,0);
-		
 		pass
 	pass
 
 func _process(delta):
 	if started:
+		if attacked_timer > 0 and has_been_attacked:
+			attacked_timer -= delta;
+		elif attacked_timer <= 0 and has_been_attacked:
+			attacked_timer = attacked_timer_default;
+			has_been_attacked = false;
+			pass
 		var nv = get_global_pos() - Utils.get_world_node("player").get_global_pos();
 		pl_body.get_node("sprite").set_global_rot(atan2(nv.x, nv.y));
 		ai_update();
@@ -265,6 +280,7 @@ class StateDeath:
 		me.get_node("anim").set_speed(2);
 		me.get_node("anim").play("death");
 		me.get_node("anim").connect("finished", self, "attack_finished");
+		me.get_node("sound").play("slime_death");
 		pass
 	
 	func attack_finished():

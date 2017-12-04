@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://sprites/player_attack.png" type="Texture" id=2]
+[ext_resource path="res://sprites/player_death.png" type="Texture" id=2]
+[ext_resource path="res://sounds/death.wav" type="Sample" id=3]
+[ext_resource path="res://sounds/NipTheSlipple.wav" type="Sample" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -27,7 +29,23 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 
-resource/name = "idle"
+resource/name = "death"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=4]
+
 length = 0.3
 loop = true
 step = 0.1
@@ -42,7 +60,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
 length = 0.7
 loop = true
@@ -56,6 +74,21 @@ tracks/0/keys = {
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="SampleLibrary" id=6]
+
+samples/death = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/music = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
 }
 
 [node name="player" type="RigidBody2D"]
@@ -91,10 +124,11 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/attack = SubResource( 2 )
-anims/idle = SubResource( 3 )
-anims/run = SubResource( 4 )
+anims/death = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/run = SubResource( 5 )
 playback/active = true
-playback/speed = 0.5
+playback/speed = 2.0
 blend_times = [  ]
 autoplay = ""
 
@@ -108,5 +142,16 @@ hframes = 6
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="sound" type="SamplePlayer2D" parent="."]
+
+params/volume_db = -1.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 6 )
+config/pitch_random = 0.0
 
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://sounds/sound.tscn" type="PackedScene" id=2]
 
 [node name="Level" type="Node2D"]
 
@@ -18,5 +19,7 @@ next_level = null
 [node name="spawners" type="Node2D" parent="."]
 
 [node name="enemies" type="Node2D" parent="."]
+
+[node name="sound" parent="." instance=ExtResource( 2 )]
 
 

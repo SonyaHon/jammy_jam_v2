@@ -29,6 +29,7 @@ func _ready():
 func change_level(lvl):
 	var prevAddr = current_level;
 	current_level = lvl
+	get_node("camera").get_node("GUI").get_node("LvlComplete").set_text("Level Completed!");
 	get_node(current_level).start();
 	pass
 

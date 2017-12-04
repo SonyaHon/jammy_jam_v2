@@ -6,6 +6,7 @@ var enemies;
 signal cleared;
 
 export(NodePath) var next_level;
+var played_sound = false;
 
 func _ready():
 	set_fixed_process(true);
@@ -39,6 +40,10 @@ func _fixed_process(delta):
 		spwners = 0;
 		pass
 	if spwners == 0 and enemies == 0:
+		Utils.get_world_node("camera").get_node("GUI").get_node("LvlComplete").set_text("Level Completed!");
+		if !played_sound:
+			get_node("sound").play("level_end");
+			played_sound = true
 		emit_signal("cleared");
 		pass
 	

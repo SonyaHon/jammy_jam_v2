@@ -22,6 +22,11 @@ func _open():
 func _close(target):
 	if target.is_in_group(Utils.GR_PLAYER):
 		anim.play_backwards("open");
+		anim.connect("finished", self, "play_sound");
 		if is_opened:
 			emit_signal("passed");
+	pass
+
+func play_sound():
+	get_node("sound").play("door_close");
 	pass

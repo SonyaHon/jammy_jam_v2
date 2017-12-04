@@ -49,7 +49,8 @@ class StateEnd:
 		var wt = me.get_node("water")
 		wt.set_texture(me.anim_burst);
 		wt.set_hframes(7);
-		me.get_node("anim").set_speed(2);
+		me.get_node("sound").play("splash");
+		me.get_node("anim").set_speed(1.5);
 		me.get_node("anim").play("burst");
 		me.get_node("anim").connect("finished", self, "_on_finish")
 		pass
@@ -57,6 +58,7 @@ class StateEnd:
 	func _on_finish():
 		me.get_node("water").queue_free();
 		me.get_node("anim").queue_free();
+		me.get_node("sound").queue_free();
 		me.can_heal = false;
 		pass
 

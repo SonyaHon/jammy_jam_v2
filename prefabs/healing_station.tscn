@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://scripts/healing_station.gd" type="Script" id=1]
 [ext_resource path="res://sprites/postheal.png" type="Texture" id=2]
 [ext_resource path="res://sprites/preheal-sheet.png" type="Texture" id=3]
+[ext_resource path="res://sounds/splash.wav" type="Sample" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -29,7 +30,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 
 resource/name = "idle"
-length = 0.2
+length = 0.4
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -37,10 +38,19 @@ tracks/0/path = NodePath("water:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.1, 0.2 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": FloatArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="SampleLibrary" id=4]
+
+samples/splash = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
 }
 
 [node name="healing_station" type="Area2D"]
@@ -75,6 +85,7 @@ texture = ExtResource( 2 )
 
 texture = ExtResource( 3 )
 hframes = 4
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
@@ -90,7 +101,7 @@ params/attenuation/min_distance = 1.0
 params/attenuation/max_distance = 2048.0
 params/attenuation/distance_exp = 1.0
 config/polyphony = 1
-config/samples = null
+config/samples = SubResource( 4 )
 config/pitch_random = 0.0
 
 

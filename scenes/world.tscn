@@ -1,13 +1,61 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
-[ext_resource path="res://prefabs/Level.tscn" type="PackedScene" id=2]
-[ext_resource path="res://prefabs/connector.tscn" type="PackedScene" id=3]
-[ext_resource path="res://prefabs/wall_corner.tscn" type="PackedScene" id=4]
-[ext_resource path="res://prefabs/slime_spawner.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Level_tetawex.tscn" type="PackedScene" id=6]
-[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://prefabs/camera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/diman.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sounds/sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Level_tetawex.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/level_end.wav" type="Sample" id=5]
+[ext_resource path="res://scenes/NordLevel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Ending.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/camera.tscn" type="PackedScene" id=9]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/level_end = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "#Button exit
+extends Button
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	connect(\"pressed\", self, \"on\");
+	pass
+
+func on():
+	get_tree().quit()
+	pass
+"
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Button
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	connect(\"pressed\", self, \"on\")
+	pass
+
+func on():
+	get_tree().reload_current_scene();
+	pass"
 
 [node name="world" type="Node"]
 
@@ -19,89 +67,132 @@ current_level = NodePath("levels/level1")
 [node name="level1" parent="levels" instance=ExtResource( 2 )]
 
 editor/display_folded = true
-next_level = NodePath("levels/level2")
+transform/pos = Vector2( -175.408, -335.77 )
+next_level = NodePath("levels/level3")
 
-[node name="connector" parent="levels/level1/connector" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 519.663, 357.778 )
-
-[node name="wall_corner" parent="levels/level1/walls" instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 170.257, 266.489 )
-
-[node name="slime_spawner1" parent="levels/level1/spawners" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 301.484, 312.895 )
-slime_number = 0
-slime_spawn_delay = 1
-
-[node name="level2" parent="levels" instance=ExtResource( 2 )]
-
-editor/display_folded = true
-transform/pos = Vector2( 1413.32, 201.337 )
-next_level = NodePath("levels/test")
-
-[node name="connector" parent="levels/level2/connector" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 375.175, 163.787 )
-
-[node name="slime_spawner" parent="levels/level2/spawners" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 164.102, 307.326 )
-transform/rot = 144.613
-slime_number = 5
-slime_spawn_delay = 0
-
-[node name="slime_spawner 2" parent="levels/level2/spawners" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 60.4675, 214.795 )
-slime_number = 2
-slime_spawn_delay = 1
-
-[node name="level3" parent="levels" instance=ExtResource( 2 )]
-
-editor/display_folded = true
-transform/pos = Vector2( 4688, 304 )
-
-[node name="test" parent="levels" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 2848, 736 )
-next_level = NodePath("../level3")
-
-[node name="floor" parent="levels/test"]
+[node name="puddles" parent="levels/level1"]
 
 editor/display_folded = true
 
-[node name="puddles" parent="levels/test"]
+[node name="spawners" parent="levels/level1"]
 
 editor/display_folded = true
 
-[node name="connector" parent="levels/test/connector"]
+[node name="sound" parent="levels/level1" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1184, -112 )
+[node name="level3" parent="levels" instance=ExtResource( 4 )]
 
-[node name="wall22" parent="levels/test/walls"]
+transform/pos = Vector2( 1552, 96 )
+next_level = NodePath("levels/levelmax")
 
-transform/pos = Vector2( 960, -208 )
-transform/rot = 0.0
+[node name="sound" parent="levels/level3"]
 
-[node name="wall28" parent="levels/test/walls"]
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
 
-transform/rot = 0.0
-
-[node name="player" parent="." instance=ExtResource( 7 )]
+[node name="levelmax" parent="levels" instance=ExtResource( 6 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 63.9896, 508.786 )
+transform/pos = Vector2( 3248, 0 )
+next_level = NodePath("levels/end")
+
+[node name="floor" parent="levels/levelmax"]
+
+editor/display_folded = true
+
+[node name="walls" parent="levels/levelmax"]
+
+editor/display_folded = true
+
+[node name="sound" parent="levels/levelmax"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+[node name="end" parent="levels" instance=ExtResource( 7 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 5568, -48 )
+transform/rot = 90.0
+
+[node name="Label" type="Label" parent="levels/end"]
+
+rect/rotation = -90.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -16.0
+margin/top = -448.0
+margin/right = 383.0
+margin/bottom = -434.0
+text = "Congratz u are in 0.2% of people, who`v completed the demo!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button" type="Button" parent="levels/end"]
+
+rect/rotation = -90.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -48.0
+margin/top = -96.0
+margin/right = -13.0
+margin/bottom = -76.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Exit"
+flat = false
+script/script = SubResource( 3 )
+
+[node name="Button1" type="Button" parent="levels/end"]
+
+rect/rotation = -90.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -48.0
+margin/top = -432.0
+margin/right = 9.0
+margin/bottom = -412.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Restart"
+flat = false
+script/script = SubResource( 2 )
+
+[node name="sound" parent="levels/end" instance=ExtResource( 3 )]
+
+[node name="player" parent="." instance=ExtResource( 8 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 208.083, -0.31781 )
 transform/rot = 0.458661
 gravity_scale = 0.0
 player_initial_mass = 90.0
 
-[node name="camera" parent="." instance=ExtResource( 8 )]
+[node name="camera" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( -591.351, -308.967 )
-offset = Vector2( 0, 0 )
-anchor_mode = 1
+offset = Vector2( -550, -300 )
 
 [node name="GUI" type="CanvasLayer" parent="camera"]
 
@@ -204,9 +295,22 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="LvlComplete" type="Label" parent="camera/GUI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 464.0
+margin/top = 16.0
+margin/right = 575.0
+margin/bottom = 30.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 
 [editable path="levels/level1"]
-[editable path="levels/level2"]
 [editable path="levels/level3"]
-[editable path="levels/test"]
+[editable path="levels/levelmax"]
 [editable path="player"]

@@ -13,17 +13,19 @@ var current_acceleration;
 var attack_anim = preload("res://sprites/player_attack.png");
 var idle_anim = preload("res://sprites/player_idle.png");
 var run_anim = preload("res://sprites/player_run.png");
+var death_anim = preload("res://sprites/player_death.png");
 
 var bullet = preload("res://prefabs/bullet.tscn");
 
 var current_state;
-var prev_state;
+var prev_state = STATE_IDLE;
 
 enum {
 	
 	STATE_IDLE,
 	STATE_RUN,
-	STATE_ATTACK
+	STATE_ATTACK,
+	STATE_DEATH
 	
 }
 
@@ -84,8 +86,7 @@ func _on_collide(target):
 		current_acceleration += target.get_linear_velocity() * 0.03;
 		pass
 	elif target.is_in_group(Utils.GR_WALL):
-		print("OMG Collision!");
-		emit_signal("died");
+		change_state(STATE_DEATH);
 		pass
 	pass
 
@@ -166,6 +167,7 @@ func _input(evt):
 
 func start():
 	started = true;
+	get_node("sound").play("music");
 	pass
 
 func fire():
@@ -194,6 +196,8 @@ func change_state(new_state):
 		current_state = StateRun.new(self);
 	elif new_state == STATE_ATTACK:
 		current_state = StateAttack.new(self);
+	elif new_state  == STATE_DEATH:
+		current_state = StateDeath.new(self);
 	pass
 
 
@@ -246,6 +250,28 @@ class StateRun:
 		me.get_node("anim").stop();
 		pass
 
+
+class StateDeath:
+	var me;
+	func  _init(me):
+		self.me = me;
+		me.get_node("sprite").set_texture(me.death_anim);
+		me.get_node("sprite").set_hframes(6);
+		me.get_node("sprite").set_frame(0);
+		me.get_node("anim").set_speed(2.2);
+		me.get_node("anim").play("death");
+		me.get_node("sound").play("death");
+		me.get_node("anim").connect("finished", self, "fins");
+		me.set_linear_velocity(Vector2(0,0))
+		me.current_velocity = Vector2(0, 0)
+		me.current_acceleration = Vector2(0, 0);
+		pass
+	func fins():
+		me.emit_signal("died");
+		pass
+	func exit():
+		pass
+
 class StateAttack:
 	var me;
 	var prev_state;
@@ -254,9 +280,9 @@ class StateAttack:
 		self.me = me
 		self.prev_state = me.prev_state;
 		me.get_node("sprite").set_texture(me.attack_anim);
-		me.get_node("sprite").set_hframes(6); # TODO Change to real value
+		me.get_node("sprite").set_hframes(6); 
 		me.get_node("sprite").set_frame(0);
-		me.get_node("anim").set_speed(1);
+		me.get_node("anim").set_speed(1.5);
 		me.get_node("anim").play("attack");
 		me.get_node("anim").connect("finished", self, "attack_finished");
 		pass
